@@ -1,0 +1,117 @@
+@use "base" as *;
+@use "abstract" as *;
+
+body
+{
+    background-color: $dark-grayish-blue;
+    font-family: $font-primary;
+}
+
+.quote
+{
+    background-color: rgba($color: $grayish-blue, $alpha: .3);
+    @include flex;
+    width: 16em;
+    height: 50vh;
+    margin: 5em auto;
+    border-radius: 10px;
+    padding: .5em 1.7em;
+    box-shadow: 0 5px 40px rgba($color: black, $alpha: .2);
+
+    @include responsive(tablet)
+    {
+        margin: 9em auto auto;
+        width: 22em;
+    }
+
+    @include responsive(portatil)
+    {
+        height: 45vh;
+    }
+
+    &__random
+    {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: $neon-green;
+        transform: translateY(-1em);
+    }
+
+    &__advice
+    {
+        color: $light-cyan;
+        font-size: 20px;
+        font-weight: $weight;
+        line-height: 1.5;
+        margin-top: 1em;
+        transform: translateY(-.5em);
+        width: 250px;
+
+        @include responsive(tablet)
+        {
+            width: 340px;
+        }
+    }
+
+    &__divider
+    {
+        margin-top: 1em;
+        transform: translateY(-1em);
+        width: 90%;
+
+        @include responsive(tablet)
+        {
+            display: none;
+        }
+    }
+
+    &__dividerTwo
+    {
+        display: none;
+
+        @include responsive(tablet)
+        {
+            display: block;
+            width: 90%;
+        }
+    }
+
+    &__button
+    {
+        display: block;
+        background-color: $neon-green;
+        border: none; outline: none;
+        width: 55px;
+        height: 55px;
+        transform: translateY(9.8em);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        position: fixed;
+
+        &:hover
+        {
+            box-shadow: 0 0 30px $neon-green;
+        }
+        @include responsive(tablet)
+        {
+            width: 60px;
+            height: 60px;
+        }
+
+        @include responsive(portatil)
+        {
+            transform: translateY(8.8em);
+        }
+    }
+
+    &__dice
+    {
+        width: 21px;
+
+        @include responsive(tablet)
+        {
+            width: 24px;
+        }
+    }
+}

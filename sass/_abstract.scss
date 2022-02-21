@@ -1,0 +1,19 @@
+@mixin responsive($breakpoint) {
+    @if $breakpoint == tablet {
+        @media screen and (min-width: 768px) { @content }
+    }
+    @if $breakpoint == portatil {
+        @media screen and (min-width: 1024px) { @content }
+    }
+    @if $breakpoint == desktop {
+        @media screen and (min-width: 1440px) { @content }
+    }
+}
+
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
